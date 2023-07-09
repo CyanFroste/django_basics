@@ -19,7 +19,7 @@
     </header>
 
     <div class="modal create-post-modal">
-        <form method="POST">
+        <form method="POST" class="main">
             <header>
                 <h3>Post</h3>
                 <button type="button" class="button-clear create-post-modal-toggle">close</button>
@@ -34,11 +34,33 @@
     <div class="posts-container">
         {% for post in posts %}
             <div class="post">
-                <h3>{{ post.title }}</h3>
-                <p>{{ post.content }}</p>
+                <a href="#"><h3>{{ post.data.title }}</h3></a>
+                <p>{{ post.data.content }}</p>
                 <div>
-                    <a href="#">@{{ post.user }}</a>
-                    <span>{{ post.created }}</span>
+                    {# <form action="/posts/{{ post.data.id }}/likes" method="POST"> #}
+                    {% if user.is_authenticated %}                         
+                        {% if post.like_by_user %}                     
+                            <button type="button"
+                                data-method="DELETE"
+                                data-url="/posts/{{ post.data.id }}/likes/{{ post.like_by_user.id }}" 
+                                class="post-like-toggle button-small">
+                                like
+                            </button>
+                        {% else %}                         
+                            <button type="button" 
+                                data-method="POST"
+                                data-url="/posts/{{ post.data.id }}/likes"
+                                class="post-like-toggle button-outline button-small">
+                                like
+                            </button>
+                        {% endif %}
+                    {% endif %}
+                    {# </form> #}
+                    <span>{{ post.data.likes }} likes</span>                    
+                    <a href="#">4 comments</a>   
+                                     
+                    <a href="#" class="post-user">@{{ post.data.user }}</a>
+                    <span>{{ post.data.created }}</span>
                 </div>
             </div>
         {% endfor %}

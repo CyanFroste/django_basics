@@ -86,6 +86,16 @@ class Post(models.Model):
     created = models.DateTimeField(auto_created=True)
 ```
 
+Migrations
+
+```sh
+python manage.py makemigrations society
+```
+
+```sh
+python manage.py migrate society
+```
+
 ---
 
 References

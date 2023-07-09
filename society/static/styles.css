@@ -1,4 +1,4 @@
-form {
+form.main {
   max-width: 400px;
   display: flex;
   flex-direction: column;
@@ -8,6 +8,13 @@ form {
 
 button {
   margin-bottom: 0px;
+}
+
+.button-small {
+  font-size: 1.2rem;
+  height: 3.2rem;
+  line-height: 3.2rem;
+  padding: 0 2rem;
 }
 
 header.navbar {
@@ -28,7 +35,6 @@ header.navbar nav {
 }
 
 .posts-container {
-  height: 2000px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -41,19 +47,26 @@ header.navbar nav {
   flex-direction: column;
   padding: 2rem;
   border-radius: 10px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.posts-container .post form {
+  margin: 0px;
 }
 
 .posts-container .post div:last-child {
   display: flex;
   align-items: center;
   gap: 1rem;
-  justify-content: end;
   margin-top: 1rem;
 }
 
+.posts-container .post div:last-child .post-user {
+  margin-left: auto;
+}
+
 .posts-container p {
-  min-height: 60px;
+  min-height: 80px;
 }
 
 .modal {
