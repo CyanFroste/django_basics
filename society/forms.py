@@ -16,3 +16,7 @@ class RegisterForm(UserCreationForm):
         model = User
         # fields = UserCreationForm.Meta.fields + ("email", "first_name", "last_name")
         fields = UserCreationForm.Meta.fields + ("email",)
+
+class CreatePostForm(forms.Form):
+    title = forms.CharField(max_length=200)
+    content = forms.CharField(widget=forms.Textarea)
