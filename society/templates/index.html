@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="container">
+    <header class="navbar">
+        <h1>Society</h1>
+        <nav>
+            {% if user.is_authenticated %}
+                {{ user.username }}
+                <a href="/logout">Logout</a>         
+            {% else %}
+                <a href="/login">Login</a>
+                <a href="/register">Register</a>
+            {% endif %}
+        </nav>
+    </header>
+</div>
+{% endblock %}

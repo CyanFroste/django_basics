@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Register{% endblock %}
+
+{% block content %}
+<form method="POST">
+    <h2>Register</h2>
+
+    {% csrf_token %}
+    {{ form.as_div }}
+
+    <input type="submit" value="Register">
+    <a href="/login">Login</a>
+</form>
+{% endblock %}
