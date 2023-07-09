@@ -1,7 +1,7 @@
 ### Init Project
 
 ```sh
-django-admin startproject django_unchained
+django-admin startproject django_basics
 ```
 
 ### Start Server
@@ -18,7 +18,7 @@ python manage.py startapp society
 
 ### Register App urls
 
-Register the app (society) urls on `django_unchained/urls.py`
+Register the app (society) urls on `django_basics/urls.py`
 
 ```py
 urlpatterns = [
@@ -53,7 +53,7 @@ def index(request):
 
 ### Models
 
-Register app on `django_unchained/settings.py`
+Register app on `django_basics/settings.py`
 
 ```py
 INSTALLED_APPS = [
