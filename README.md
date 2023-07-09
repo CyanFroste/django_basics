@@ -89,7 +89,15 @@ class Post(models.Model):
 Migrations
 
 ```sh
+python manage.py makemigrations
+```
+
+```sh
 python manage.py makemigrations society
+```
+
+```sh
+python manage.py migrate
 ```
 
 ```sh
